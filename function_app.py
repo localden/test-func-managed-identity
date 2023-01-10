@@ -8,7 +8,7 @@ app = func.FunctionApp()
 default_credential = DefaultAzureCredential()
 
 @app.function_name(name="TestTrigger")
-@app.route(route="test")
+@app.route(route="test", http_auth_level=func.AuthLevel.ANONYMOUS)
 def my_function(req: func.HttpRequest) -> func.HttpResponse:
     logging.info('Python HTTP trigger function processed a request.')
     # Test2w
