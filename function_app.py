@@ -2,7 +2,7 @@ from azure.identity import DefaultAzureCredential
 from azure.storage.blob import BlobServiceClient
 import azure.functions as func
 
-
+app = func.FunctionApp()
 default_credential = DefaultAzureCredential()
 
 @app.function_name(name="TestTrigger")
