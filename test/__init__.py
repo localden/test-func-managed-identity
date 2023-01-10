@@ -2,7 +2,11 @@ from azure.identity import DefaultAzureCredential
 from azure.storage.blob import BlobServiceClient
 import azure.functions as func
 
+
 default_credential = DefaultAzureCredential()
+
+@app.function_name(name="TestFunction")
+@app.route(route="test")
 
 def main(req: func.HttpRequest) -> func.HttpResponse:
     # Test
